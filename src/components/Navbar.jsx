@@ -12,7 +12,7 @@ const Navbar = () => {
     onAuthStateChanged(auth, (user) => {
       if (user) {
         setIsLogin(true);
-        console.log(user.email)
+        console.log(user.uid)
       }else{
         setIsLogin(false);
       }
@@ -25,13 +25,11 @@ const Navbar = () => {
     <div className='space-x-10 bg-gray-200 px-32 p-4'>
         <Link to="/">Home</Link>
         <Link to="/about">About</Link>
-        {/* {!isLogin ? (
+        {!isLogin ? (
             <>
               <Link to="/daftar">Daftar</Link>
               <Link to="/login">Login</Link> 
-            </>) : null} */}
-        <Link to="/daftar">Daftar</Link>
-        <Link to="/login">Login</Link> 
+            </>) : null}
     </div>
   )
 }
